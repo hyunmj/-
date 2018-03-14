@@ -9,5 +9,5 @@ from .models import Candidate
 # Create your views here.
 def index(request):
     candidates = Candidate.objects.all()
-
-    return render(request, 'elections/index.html')
+    context = {'candidates':candidates}
+    return render(request, 'elections/index.html', context)
